@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BetOnMe — bet on yourself, your friends will collect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">Bet<span>On</span>Me</div>
+    <div class="daybox"><span class="live-dot"></span> <b id="dayLabel">DAY 12</b> <span class="muted">· season 1</span></div>
+    <div class="top-right">
+      <button class="btn ghost small" id="advanceBtn" title="Demo time machine: end the day for everyone">⏭ End Day</button>
+      <div class="coins" id="coins">🪙 0</div>
+      <div class="as-wrap">
+        <span class="muted tiny">viewing as</span>
+        <select id="asSelect"></select>
+      </div>
+    </div>
+  </header>
+
+  <div class="ticker">
+    <div class="ticker-label"><span class="live-dot"></span>LIVE <span class="ai-tag" id="aiTag">AI</span></div>
+    <div class="ticker-track"><div class="ticker-inner" id="ticker">Loading the board…</div></div>
+  </div>
+
+  <div class="layout">
+    <nav class="sidebar">
+      <button class="nav active" data-view="board">🔴 <span>Live Board</span></button>
+      <button class="nav" data-view="mine">🎯 <span>My Bets</span></button>
+      <button class="nav" data-view="shame">💀 <span>Wall of Shame</span></button>
+      <button class="nav" data-view="squad">🏆 <span>Squad Standings</span></button>
+      <div class="side-note">
+        <b>How it works</b>
+        <ol>
+          <li>Bet on a habit. AI sets the line.</li>
+          <li>Post proof daily. AI refs it.</li>
+          <li>Friends back you or fade you.</li>
+          <li>Miss a day? Post your punishment.</li>
+        </ol>
+        <span class="muted tiny">Coins are for bragging rights only. No real money.</span>
+      </div>
+    </nav>
+
+    <main class="main">
+      <div class="main-head">
+        <h1 id="viewTitle">Live Board</h1>
+        <div class="filters" id="filters">
+          <button class="chip active" data-f="all">All</button>
+          <button class="chip" data-f="due">⏰ Due Today</button>
+          <button class="chip" data-f="fire">🔥 On Fire</button>
+          <button class="chip" data-f="settled">Settled</button>
+        </div>
+      </div>
+      <div id="content" class="cards"></div>
+    </main>
+
+    <aside class="slip">
+      <div class="slip-head">
+        <span>🧾 Bet Slip</span><span class="slip-sub">AI Coach</span>
+      </div>
+      <div id="slip"></div>
+    </aside>
+  </div>
+
+  <div class="modal-bg hidden" id="modalBg"><div class="modal" id="modal"></div></div>
+  <div class="toasts" id="toasts"></div>
+  <div class="bust-overlay hidden" id="bust"></div>
+
+  <script src="/app.js" type="module"></script>
+</body>
+</html>

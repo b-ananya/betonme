@@ -1,0 +1,25 @@
+{
+  "name": "betonme",
+  "version": "1.0.0",
+  "description": "Bet on yourself. Your friends will collect.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "assets": "node demo/make-assets.mjs",
+    "record": "node demo/record.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.3.0",
+    "express": "^5.3.0",
+    "multer": "^2.5.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "playwright": "^1.64.1"
+  }
+}
